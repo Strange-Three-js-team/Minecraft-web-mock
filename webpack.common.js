@@ -34,8 +34,12 @@ module.exports = {
         use: ['style-loader', 'css-loader'],
       },
       {
-        test: /\.(png|svg|jp(e?)g|gif)$/i,
-        type: 'asset/resource',
+        test: /\.(png|svg|jpe?g|gif)$/i,
+        loader: 'file-loader',
+        options: {
+          outputPath: 'images',
+          name: '[name].[contenthash].[ext]'
+        }
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
