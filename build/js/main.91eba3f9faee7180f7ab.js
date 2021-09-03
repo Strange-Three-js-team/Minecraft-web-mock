@@ -1,1 +1,0 @@
-(self.webpackChunkMinecraft_web_mock=self.webpackChunkMinecraft_web_mock||[]).push([[179],{607:()=>{}},e=>{e(e.s=607)}]);
