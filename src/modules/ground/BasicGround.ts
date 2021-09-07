@@ -9,7 +9,7 @@ class BasicGround {
 
     this._plane = new THREE.Mesh(planeGeo, planeMaterial);
     this._plane.rotation.x = -0.5 * Math.PI;
-    this._plane.position.set(0, -7, 0);
+    this._plane.position.set(0, 0, 0);
   }
 
   public getPlane(): THREE.Mesh {

@@ -4,15 +4,15 @@ import CreeperSkin from '../../assets/character/creeper/creeper_skin.png';
 
 
 class Creeper {
-  _creeper: THREE.Group
-  _feet: THREE.Group
+  private _creeper: THREE.Group
+  private _feet: THREE.Group
 
-  _head: THREE.Mesh
-  _body: THREE.Mesh
-  _foot1: THREE.Mesh
-  _foot2: THREE.Mesh
-  _foot3: THREE.Mesh
-  _foot4: THREE.Mesh
+  private _head: THREE.Mesh
+  private _body: THREE.Mesh
+  private _foot1: THREE.Mesh
+  private _foot2: THREE.Mesh
+  private _foot3: THREE.Mesh
+  private _foot4: THREE.Mesh
 
   constructor() {
     // image map
@@ -44,22 +44,22 @@ class Creeper {
 
     // head
     this._head = new THREE.Mesh(headGeo, headMat)
-    this._head.position.set(0, 6, 0);
+    this._head.position.set(0, 11.5, 0);
     this._head.rotation.y = 0.5;
 
     // body
     this._body = new THREE.Mesh(bodyGeo, skinMat);
-    this._body.position.set(0, 0, 0);
+    this._body.position.set(0, 5.5, 0);
 
     // foot(*4)
     this._foot1 = new THREE.Mesh(footGeo, skinMat);
-    this._foot1.position.set(-1, -5.5, 2);
+    this._foot1.position.set(-1, 1.5, 2);
     this._foot2 = this._foot1.clone();
-    this._foot2.position.set(-1, -5.5, -2);
+    this._foot2.position.set(-1, 1.5, -2);
     this._foot3 = this._foot1.clone();
-    this._foot3.position.set(1, -5.5, 2);
+    this._foot3.position.set(1, 1.5, 2);
     this._foot4 = this._foot1.clone();
-    this._foot4.position.set(1, -5.5, -2);
+    this._foot4.position.set(1, 1.5, -2);
 
     // feet group
     this._feet = new THREE.Group();
@@ -68,6 +68,7 @@ class Creeper {
     // whole group
     this._creeper = new THREE.Group();
     this._creeper.add(this._head, this._body, this._feet)
+    this._creeper.position.set(20, 0, 0);
   }
 
   public getCharacter(): THREE.Group {
