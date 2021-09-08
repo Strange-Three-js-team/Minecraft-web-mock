@@ -1,6 +1,12 @@
 import './index.css';
 const OrbitControls = require('three-orbitcontrols')
 import * as THREE from 'three';
+import Humanoid from './humanoid';
+
+const createHumanoid = () => {
+  const humanoidObj = new Humanoid();
+  scene.add(humanoidObj.humanoid);
+}
 
 import AxeHelper from './modules/AxesHelper/AxeHelper';
 import Creeper from './modules/character/Creeper';
