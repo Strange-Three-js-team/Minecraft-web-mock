@@ -1,18 +1,14 @@
 import './index.css';
 const OrbitControls = require('three-orbitcontrols')
 import * as THREE from 'three';
-import Humanoid from './humanoid';
-
-const createHumanoid = () => {
-  const humanoidObj = new Humanoid();
-  scene.add(humanoidObj.humanoid);
-}
 
 import AxeHelper from './modules/AxesHelper/AxeHelper';
 import Creeper from './modules/character/Creeper';
 import EnderMan from './modules/character/EnderMan';
 
 import BasicGround from './modules/ground/BasicGround';
+import Zombie from './modules/character/Zombie';
+import SmallZombie from './modules/character/SmallZombie';
 
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
@@ -40,13 +36,17 @@ const init = function () {
   const creeper = new Creeper();
   const axeHelper = new AxeHelper();
   const enderMan = new EnderMan();
+  const zombie = new Zombie();
+  const smallZombie = new SmallZombie();
   
   scene.add(basicGround.getPlane());
   scene.add(creeper.getCharacter());
   scene.add(axeHelper.getAxes());
   scene.add(enderMan.getCharacter());
-
-  createHumanoid();
+  scene.add(zombie.getCharacter());
+  zombie.getCharacter().position.set(0, 0, 0);
+  scene.add(smallZombie.getCharacter());
+  smallZombie.getCharacter().position.set(0, 0, 20);
 }
 
 const render = function () {
