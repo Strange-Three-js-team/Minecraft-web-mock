@@ -63,7 +63,7 @@ class EnderMan {
     // whole group
     this._enderMan = new THREE.Group();
     this._enderMan.add(this._head, this._body, this._hand1, this._hand2, this._foot1, this._foot2)
-    this._enderMan.position.set(0, 0, 0);
+    this._enderMan.position.set(-20, 0, 0);
   }
 
   public getCharacter(): THREE.Group {

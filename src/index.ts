@@ -44,7 +44,9 @@ const init = function () {
   scene.add(basicGround.getPlane());
   scene.add(creeper.getCharacter());
   scene.add(axeHelper.getAxes());
-  scene.add(enderMan.getCharacter())
+  scene.add(enderMan.getCharacter());
+
+  createHumanoid();
 }
 
 const render = function () {
